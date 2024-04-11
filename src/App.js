@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import "./App.css";
 import SingleCard from "./components/SingleCard";
-import WrongChoice from "./components/sounds/wrongchoice.wav"
-import RightChoice from "./components/sounds/rightchoice.wav"
+import WrongChoice from "./components/sounds/wrongchoice.wav";
+import RightChoice from "./components/sounds/rightchoice.wav";
 
 const cardImages = [
   { src: "/img/01.jpg", matched: false },
@@ -36,8 +36,11 @@ function App() {
   };
 
   const handleChoice = (card) => {
-    if(disabled) return;
-    cardOne ? setCardTwo(card) : setCardOne(card);
+    if (!cardOne) {
+      setCardOne(card);
+    } else if (cardOne && card !== cardOne && !cardTwo) {
+      setCardTwo(card);
+    }
   };
 
   useEffect(() => {
