@@ -39,4 +39,14 @@
     }
   }
 
+  @media screen and (max-width: 768px) {
+    .card-grid {
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    }
+  }
   
+  @media screen and (max-width: 576px) {
+    .card-grid {
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    }
+  }
